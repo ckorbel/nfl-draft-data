@@ -1,4 +1,4 @@
-name,position,original team,draft year,draft round,draft pick,max year,first team all pro,pro-bowls,years as primary starter,weighted career approximate value,value for draft team
+name,position,original_team,draft_year,draft_round,draft_pick,max_year,first_team_all_pro,pro_bowls,years_as_primary_starter,weighted_career_approximate_value,value_for_draft_team
 Bruce Smith HOF,DE,BUF,1985,1,1,'2003',8,11,18,152,143
 Bill Fralic,G,ATL,1985,1,2,'1993',2,4,9,59,52
 Ray Childress,DT,HOU,1985,1,3,'1996',1,5,10,90,90
