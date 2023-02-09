@@ -8,13 +8,27 @@ const pool = require("./db");
 app.use(cors());
 app.use(express.json());
 
+// Fetch all player basically the whole DB
 app.get("/players", async (req, res) => {
   try {
-    const { position } = req.query;
     const players = await pool.query(
-      "SELECT * FROM draftedplayers WHERE position = $1" +
-        "ORDER BY value_for_draft_team DESC",
-      [position]
+      "SELECT * FROM draftedplayers ORDER BY draft_year DESC"
+    );
+    console.log({ players });
+    return res.json(players.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+app.get("/teams", async (req, res) => {
+  try {
+    const { team } = req.query;
+    const players = await pool.query(
+      "SELECT * FROM draftedplayers" +
+        "WHERE original_team = $1" +
+        "ORDER BY draft_year DESC",
+      [team]
     );
     return res.json(players.rows);
   } catch (err) {
